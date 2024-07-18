@@ -1,0 +1,34 @@
+<h1>This for add user</h1>
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="id">Username</label>
+    <input id="id" formControlName="id" hidden>
+  </div>
+
+  <div>
+    <label for="username">Username</label>
+    <input id="username" formControlName="username">
+  </div>
+
+  <div>
+    <label for="age">Age</label>
+    <input id="age" type="number" formControlName="age">
+  </div>
+
+  <div>
+    <label for="cin">CIN</label>
+    <input id="cin" formControlName="cin">
+  </div>
+
+  <div>
+    <label for="genre">Genre</label>
+    <input id="genre" formControlName="genre">
+  </div>
+
+  <div>
+    <label for="password">Password</label>
+    <input id="password" type="password" formControlName="password">
+  </div>
+
+  <button type="submit" [disabled]="userForm.invalid">Submit</button>
+</form>
