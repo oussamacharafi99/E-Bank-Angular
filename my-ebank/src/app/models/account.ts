@@ -1,26 +1,46 @@
-// src/app/models/account.model.ts
+import { CarteStatus } from "../enums/carte-status";
+import { CarteType } from "../enums/carte-type";
+import { CompteType } from "../enums/compte-type";
+import { TransactionType } from "../enums/transaction-type";
+
 export interface Account {
-    id: number;
-    accountNumber: string;
-    type: string; // Utilisez un type énuméré si vous avez défini CompteType en TypeScript
-    solde: number;
-    date_creation: string; // Utilisez 'string' pour les dates JSON
-    status: boolean;
-    userId: number;
-    listOfBeneficier: Beneficier[]; // Créez l'interface correspondante
-    listOfTransactions: Transaction[]; // Créez l'interface correspondante
-    listOfCarte: Carte[]; // Créez l'interface correspondante
-  }
-  
-  export interface Beneficier {
-    // Définissez les propriétés selon votre modèle Java
-  }
-  
-  export interface Transaction {
-    // Définissez les propriétés selon votre modèle Java
-  }
-  
-  export interface Carte {
-    // Définissez les propriétés selon votre modèle Java
-  }
-  
+  id: number;
+  accountNumber: string;
+  type: CompteType;
+  solde: number;
+  date_creation: string; 
+  status: boolean;
+  userId: number;
+  listOfBeneficier: Beneficier[]; 
+  listOfTransactions: Transaction[]; 
+  listOfCarte: Carte[]; 
+}
+
+export interface Beneficier {
+  id: number;
+  username: string;
+  bank: string;
+  account_number: string;
+  compteId: number;
+}
+
+export interface Transaction {
+  id: number;
+  transactionDate: string;
+  transactionTimer: string;
+  montant: number;
+  type_transaction: TransactionType;
+  description_transaction: string;
+  bank_transaction: string;
+  compteId: number;
+  beneficierId: number;
+}
+
+export interface Carte {
+  id: number;
+  carte_numero: string;
+  date_expiration: string;
+  carte_type: CarteType;
+  status: CarteStatus;
+  compteId: number;
+}

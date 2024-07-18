@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient} from '@angular/common/http'
 import { Observable } from 'rxjs';
 import { User } from '../models/user';
+import { JwtDto } from '../models/jwt-dto';
+import { Account } from '../models/account';
 
 @Injectable({
   providedIn: 'root'
@@ -26,14 +28,16 @@ export class UserServiceService {
   }
 
   /*/-- _get_username --/*/
-  public get_username(username : string):Observable<number>{
-    return this.http.get<number>(this._API_GET_USER_ID_BY_NAME +  "/" +  username);
+  public get_username(username : string):Observable<JwtDto>{
+    return this.http.get<JwtDto>(this._API_GET_USER_ID_BY_NAME +  "/" +  username);
   }
 
-   /*/-- _signup_user --/*/
-   public add_account(username : string ):Observable<number>{
-    return this.http.post<number>(this._API_SIGNUP, username);
-}
+    /*/-- _CREATE ACCOUNT  --/*/
+    
+    public add_account(user_id : number , account : Account ):Observable<Account>{
+      return this.http.post<Account>(this._API_ADD_ACCOUNT + "/" + user_id , account);
+    }
+
 
 
 }

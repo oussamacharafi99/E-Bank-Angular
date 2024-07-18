@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserServiceService } from '../Services/user-service.service';
 import { User } from '../models/user';
+import { JwtDto } from '../models/jwt-dto';
 
 @Component({
   selector: 'app-login',
@@ -22,14 +23,31 @@ export class LoginComponent implements OnInit {
 
   onSubmit(): void {
     if (this.loginForm.valid) {
+      
       const user: User = this.loginForm.value;
       this.userService.login(user)
       .subscribe(res => {
-        console.log(JSON.stringify(res));
-        console.log( this.userService.get_username(user.username))
+        localStorage.setItem('jwtData', JSON.stringify(res));
       });
     } else {
       console.log('Form is invalid.');
     }
   }
+  
+  onGet(): void {
+    const storedJwtData = localStorage.getItem('jwtData');
+    if (storedJwtData) {
+        const jwtData: JwtDto = JSON.parse(storedJwtData);
+        const token = jwtData.token;
+        const userId = jwtData.user_id;
+        
+        console.log('Token:', token);
+        console.log('User ID:', userId);
+    } else {
+        console.log('No JWT data found in localStorage.');
+    }
+}
+  
+  
+
 }
