@@ -10,6 +10,7 @@ import { LoginComponent } from './login/login.component';
 import { HeaderComponent } from './header/header.component';
 import { MatSliderModule } from '@angular/material/slider';
 import { AccountComponent } from './account/account.component';
+import { ShowAccountsComponent } from './show-accounts/show-accounts.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { AccountComponent } from './account/account.component';
     AddUserComponent,
     LoginComponent,
     HeaderComponent,
-    AccountComponent
+    AccountComponent,
+    ShowAccountsComponent
   ],
   imports: [
     BrowserModule,

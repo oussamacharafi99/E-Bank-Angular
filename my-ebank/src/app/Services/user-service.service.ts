@@ -46,5 +46,10 @@ export class UserServiceService {
     }
 
 
+  /*/-- _get_all_accounts --/*/
+  public get_all_accounts(id : number):Observable<AccountDTO>{
+    return this.http.get<AccountDTO>(this._API_GET_ALL_ACCOUNTS + "/" + id);
+  }
+
 
 }
