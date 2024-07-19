@@ -1,4 +1,24 @@
 <p>account works!</p>
-<form [formGroup]="_form_add_account" (ngSubmit)="onSaveAcount()"> 
-
+<form [formGroup]="_form_add_account" (ngSubmit)="onSubmit()">
+    <div>
+        <input id="accountNumber" formControlName="accountNumber" type="hidden">
+    </div>
+    <div>
+        <select name="cars" id="type" formControlName="type">
+            <option value="courant">courant</option>
+            <option value="epargne">epargne</option>
+        </select>
+    </div>
+    <div>
+        <label for="solde">Solde</label>
+        <input id="solde" formControlName="solde" type="number">
+    </div>
+    <div>
+        <label for="date_creation">Date de Création</label>
+        <input id="date_creation" formControlName="date_creation" type="date">
+    </div>
+    <div>
+        <input id="status" formControlName="status" type="hidden" value="true">
+    </div>
+    <button type="submit">Add Account</button>
 </form>

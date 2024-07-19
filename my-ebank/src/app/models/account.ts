@@ -2,6 +2,7 @@ import { CarteStatus } from "../enums/carte-status";
 import { CarteType } from "../enums/carte-type";
 import { CompteType } from "../enums/compte-type";
 import { TransactionType } from "../enums/transaction-type";
+import { User } from "./user";
 
 export interface Account {
   id: number;
@@ -10,7 +11,7 @@ export interface Account {
   solde: number;
   date_creation: string; 
   status: boolean;
-  userId: number;
+  user : User;
   listOfBeneficier: Beneficier[]; 
   listOfTransactions: Transaction[]; 
   listOfCarte: Carte[]; 
