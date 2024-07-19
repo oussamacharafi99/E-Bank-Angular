@@ -13,6 +13,8 @@ import { AccountComponent } from './account/account.component';
 import { ShowAccountsComponent } from './show-accounts/show-accounts.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { HomeComponent } from './home/home.component';
+import { NavComponent } from './nav/nav.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     HeaderComponent,
     AccountComponent,
     ShowAccountsComponent,
-    DashboardComponent
+    DashboardComponent,
+    HomeComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,
