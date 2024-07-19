@@ -12,6 +12,7 @@ import { MatSliderModule } from '@angular/material/slider';
 import { AccountComponent } from './account/account.component';
 import { ShowAccountsComponent } from './show-accounts/show-accounts.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     LoginComponent,
     HeaderComponent,
     AccountComponent,
-    ShowAccountsComponent
+    ShowAccountsComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

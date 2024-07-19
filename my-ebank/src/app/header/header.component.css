@@ -1,0 +1,8 @@
+.menu{
+    height: 100%;
+    width: 30%;
+    background: var(--color-secondary);
+    position: fixed;
+    top: 0;
+    left: 0;
+}
