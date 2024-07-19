@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { UserServiceService } from '../Services/user-service.service';
 import { AccountDTO } from '../models/account-dto';
-import { JwtDto } from '../models/jwt-dto'; // Importez JwtDto
+import { JwtDto } from '../models/jwt-dto';
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-show-accounts',
@@ -15,7 +16,7 @@ export class ShowAccountsComponent implements OnInit {
   constructor(private service: UserServiceService) { }
 
   ngOnInit(): void {
-    this._get_accounts(); // Appeler la méthode pour récupérer les comptes
+    this._get_accounts();
   }
 
   _get_accounts(): void {
@@ -27,5 +28,9 @@ export class ShowAccountsComponent implements OnInit {
         this.accounts = data;
       });
     }
+  }
+
+  drop(event: CdkDragDrop<AccountDTO[]>): void {
+    moveItemInArray(this.accounts, event.previousIndex, event.currentIndex);
   }
 }

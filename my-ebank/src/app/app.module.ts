@@ -11,6 +11,7 @@ import { HeaderComponent } from './header/header.component';
 import { MatSliderModule } from '@angular/material/slider';
 import { AccountComponent } from './account/account.component';
 import { ShowAccountsComponent } from './show-accounts/show-accounts.component';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ShowAccountsComponent } from './show-accounts/show-accounts.component';
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    MatSliderModule
+    MatSliderModule,
+    DragDropModule
   ],
   providers: [],
   bootstrap: [AppComponent]

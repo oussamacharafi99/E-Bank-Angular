@@ -5,8 +5,8 @@ export interface AccountDTO {
         accountNumber: string;
         type: CompteType;
         solde: number;
-        dateCreation: string; // Using ISO string format for date
+        date_creation: string;
         status: boolean;
-        idUser: number;
-    
+        id_user: number;
+
 }
