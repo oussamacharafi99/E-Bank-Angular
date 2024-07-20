@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserServiceService } from '../Services/user-service.service';
 import { User } from '../models/user';
 import { JwtDto } from '../models/jwt-dto';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -28,6 +29,7 @@ export class LoginComponent implements OnInit {
       this.userService.login(user)
       .subscribe(res => {
         localStorage.setItem('jwtData', JSON.stringify(res));
+        
       });
     } else {
       console.log('Form is invalid.');

@@ -16,3 +16,23 @@
 .header > .heade > img{
     width: 100%;
 }
+.hero-main{
+    width: 100%;
+    height: 80%;
+    background-image: url("../../assets/images/ok.png");
+    background-size: cover;
+    display: flex;
+    align-items: end;
+}
+.left{
+      width: 60%;
+
+}
+.flower{
+  width: 90%;
+  height: 180px;
+  background: rgba(255, 255, 255, 0.258);
+  backdrop-filter: blur(4px);
+  border-top-right-radius:20px;
+  border-bottom-right-radius:20px;
+}

@@ -1,6 +1,6 @@
 <p>Login works!</p>
 
-<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="animate__animated animate__backInLeft animate__delay-2s">
   <div>
     <label for="username">Username</label>
     <input id="username" formControlName="username" />
@@ -11,6 +11,5 @@
   </div>
   <button type="submit" [disabled]="loginForm.invalid">Login</button>
 </form>
-
 
 <div class="btn btn-outline-btn" (click)="onGet()">get data</div>
