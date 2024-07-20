@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Alef:wght@400;700&display=swap');
+.nav{
+    width: 100%;
+    background: var(--background-primary);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+}
+*{
+    font-family: "Alef", sans-serif;
+}
+.title >h1 {
+    font-size: 20px;
+    color: var(--color-light);
+    font-weight: 800;
+    padding-top: 5px;
+}
+.content{
+    display: flex;
+    align-items: center;
+    width: 40%;
+    padding: 0 10px;
+}
+.content > .img{
+    width: 30px;
+}
+.content > .img > img{
+    width: 22px;
+}
+
+.content > form{
+    background: var(--color-dark);
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 12px;
+}
+.content > form > input{
+    border: none;
+    background: transparent;
+    color: grey;
+    outline: none;
+}
+.content > form >button{
+    background-color: transparent;
+    border: none;
+    outline: none;
+    display: flex;
+    align-items: center;
+}
+.content > form >button > img{
+    width: 20px;
+    transition: .4s;
+}
+.content > form >button > img:hover{
+    transform: scale(1.1);
+}

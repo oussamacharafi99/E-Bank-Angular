@@ -43,5 +43,5 @@ export interface Carte {
   date_expiration: string;
   carte_type: CarteType;
   status: CarteStatus;
-  compteId: number;
+  compte: Account;
 }

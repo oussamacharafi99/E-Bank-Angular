@@ -9,7 +9,29 @@
     justify-content: space-between;
 }
 .side{
-    width: 78%;
+    width: 79%;
     height: 100%;
-    background: red;
+    position: fixed;
+    right: 0;
+    top: 0;
+}
+.content{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.content-left{
+    width: 65%;
+    height: 100%;
+}
+.content-right{
+    width: 34%;
+    height: 100%;
+}
+.cardBank{
+    width: 98%;
+    padding: 10px;
+    border-radius: 20px;
+    background: var(--color-secondary);
 }

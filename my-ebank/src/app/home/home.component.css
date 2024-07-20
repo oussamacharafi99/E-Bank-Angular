@@ -1,0 +1,18 @@
+.main{
+    width: 100%;
+    height: 100vh;
+    background: url("../../assets/images/5443270.jpg") no-repeat top right/cover;
+}
+.header{
+    width: 90%;
+    padding: 10px 80px;
+    background: rgba(0, 0, 0, 0.29);
+    backdrop-filter: blur(10px);
+    margin: 0 auto;
+}
+.header > .heade{
+    width: 120px;
+}
+.header > .heade > img{
+    width: 100%;
+}

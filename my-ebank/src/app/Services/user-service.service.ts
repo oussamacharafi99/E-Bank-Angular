@@ -3,7 +3,7 @@ import { HttpClient} from '@angular/common/http'
 import { Observable } from 'rxjs';
 import { User } from '../models/user';
 import { JwtDto } from '../models/jwt-dto';
-import { Account } from '../models/account';
+import { Account, Carte } from '../models/account';
 import { AccountDTO } from '../models/account-dto';
 
 @Injectable({
@@ -17,7 +17,7 @@ export class UserServiceService {
   private _API_GET_USER_ID_BY_NAME : string = "http://localhost:8000/get-username" ;
   private _API_ADD_ACCOUNT : string = "http://localhost:8000/add_compte";
   private _API_GET_ALL_ACCOUNTS : string = "http://localhost:8000/get_all_comptes";
-  private _API__GET_CARDE : string = "http://localhost:8000/add_compte";
+  private _API__GET_CARDE : string = "http://localhost:8000/carte/get";
 
   /*/-- _signup_user --/*/
   public signup(user: User):Observable<User>{
@@ -48,8 +48,13 @@ export class UserServiceService {
 
   /*/-- _get_all_accounts --/*/
   public get_all_accounts(id : number):Observable<AccountDTO[]>{
-    return this.http.get<AccountDTO[]>(this._API_GET_ALL_ACCOUNTS + "/" + id);
+    return this.http.get<AccountDTO[]>(`${this._API_GET_ALL_ACCOUNTS}/${id}`);
   }
+
+    /*/-- _get_first_card --/*/
+    public getfirstCarte(id: number): Observable<Carte> {
+      return this.http.get<Carte>(`${this._API__GET_CARDE}/${id}`);
+    }
 
 
 }
