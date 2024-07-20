@@ -13,7 +13,7 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
 
-  constructor(private fb: FormBuilder, private userService: UserServiceService) {}
+  constructor(private fb: FormBuilder, private userService: UserServiceService , private route : Router) {}
 
   ngOnInit(): void {
     this.loginForm = this.fb.group({
@@ -30,6 +30,7 @@ export class LoginComponent implements OnInit {
       .subscribe(res => {
         localStorage.setItem('jwtData', JSON.stringify(res));
         
+        this.route.navigateByUrl("/choice");
       });
     } else {
       console.log('Form is invalid.');

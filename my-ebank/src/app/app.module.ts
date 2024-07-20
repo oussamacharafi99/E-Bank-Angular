@@ -15,6 +15,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HomeComponent } from './home/home.component';
 import { NavComponent } from './nav/nav.component';
+import { ChoiceAccountComponent } from './choice-account/choice-account.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { NavComponent } from './nav/nav.component';
     ShowAccountsComponent,
     DashboardComponent,
     HomeComponent,
-    NavComponent
+    NavComponent,
+    ChoiceAccountComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +37,8 @@ import { NavComponent } from './nav/nav.component';
     ReactiveFormsModule,
     HttpClientModule,
     MatSliderModule,
-    DragDropModule
+    DragDropModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
