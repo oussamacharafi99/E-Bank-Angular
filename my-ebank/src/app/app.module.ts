@@ -16,6 +16,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { HomeComponent } from './home/home.component';
 import { NavComponent } from './nav/nav.component';
 import { ChoiceAccountComponent } from './choice-account/choice-account.component';
+import { TransactionComponent } from './transaction/transaction.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { ChoiceAccountComponent } from './choice-account/choice-account.componen
     DashboardComponent,
     HomeComponent,
     NavComponent,
-    ChoiceAccountComponent
+    ChoiceAccountComponent,
+    TransactionComponent
   ],
   imports: [
     BrowserModule,

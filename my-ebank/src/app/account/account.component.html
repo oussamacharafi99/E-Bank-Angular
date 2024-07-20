@@ -1,4 +1,4 @@
-<p>account works!</p>
+<!-- <p>account works!</p>
 <form [formGroup]="_form_add_account" (ngSubmit)="onSubmit()">
     <div>
         <input id="accountNumber" formControlName="accountNumber" type="hidden">
@@ -21,4 +21,18 @@
         <input id="status" formControlName="status" type="hidden" value="true">
     </div>
     <button type="submit">Add Account</button>
-</form>
+</form> -->
+
+<div *ngIf="account">
+    <div class="header">
+        <h1>ACCOUNT INFO</h1>
+        <button>Add Account</button>
+    </div>
+    <div class="info">
+        <p>Account Number: <span>{{ account.accountNumber }}</span> </p>
+        <p>Account Type: <span>{{ account.type }}</span> </p>
+        <p>Expiration: <span>{{account.date_creation}}</span> </p>
+        <p>Solde: <span>{{account.solde}}</span> </p>
+        <p>Statu: <span [ngClass]="account.status ? 'active' : 'desactive'">{{ account.status ? 'Active' : 'Desactive' }}</span></p>
+    </div>
+  </div>

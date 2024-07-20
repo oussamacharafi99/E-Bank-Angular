@@ -3,6 +3,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserServiceService } from '../Services/user-service.service';
 import { Account } from '../models/account';
 import { JwtDto } from '../models/jwt-dto';
+import { AccountDTO } from '../models/account-dto';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-account',
@@ -11,8 +13,9 @@ import { JwtDto } from '../models/jwt-dto';
 })
 export class AccountComponent implements OnInit {
   _form_add_account!: FormGroup;
+  account !: AccountDTO; 
 
-  constructor(private fb: FormBuilder, private service: UserServiceService) { }
+  constructor(private fb: FormBuilder, private service: UserServiceService , private route : ActivatedRoute) { }
 
   ngOnInit(): void {
     this._form_add_account = this.fb.group({
@@ -25,6 +28,24 @@ export class AccountComponent implements OnInit {
       Beneficier: [[]],
       Transaction: [[]],
       Carte: [[]]
+    });
+
+    this.route.paramMap.subscribe(params => {
+      const accountId = params.get('id');
+      if (accountId) {
+        this.onGet(+accountId);
+      }
+    });
+  }
+
+  onGet(id : number){
+       this.service.get_account(id).subscribe({
+      next: (data: AccountDTO) => {
+        this.account = data;
+      },
+      error: (err) => {
+        console.error('Error fetching account details', err);
+      }
     });
   }
 

@@ -1,0 +1,46 @@
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+.header > h1 {
+    font-size: 16px;
+    font-weight: 900;
+    color: var(--color-light);
+}
+.header > button{
+    background: var(--background-primary);
+    border: none;
+    border-radius: 15px;
+    padding: 5px 10px;
+    color: var(--color-light);
+    font-size: 12px;
+    font-weight: 700;
+    transition: .3s;
+}
+.header > button:hover{
+    background:black;
+}
+.info{
+    padding: 0 20px;
+}
+.info > p{
+    color: white;
+    font-weight: 800;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.info > p > span{
+    text-align: left;
+    justify-content: start;
+}
+.active {
+    color: green;
+  }
+  
+.desactive {
+    color: red;
+  }

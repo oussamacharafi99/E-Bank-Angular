@@ -35,3 +35,10 @@
     border-radius: 20px;
     background: var(--color-secondary);
 }
+.account-info{
+    margin-top:10px;
+    width: 98%;
+    padding: 10px;
+    border-radius: 20px;
+    background: var(--color-secondary);
+}

@@ -18,7 +18,8 @@ export class UserServiceService {
   private _API_ADD_ACCOUNT : string = "http://localhost:8000/add_compte";
   private _API_GET_ALL_ACCOUNTS : string = "http://localhost:8000/get_all_comptes";
   private _API__GET_CARDE : string = "http://localhost:8000/carte/get";
-
+  private _API__GET_ALL_CARDE : string = "http://localhost:8000/carte/get_all";
+  private _API_GET_ACCOUNT : string = "http://localhost:8000/get_compte";
   /*/-- _signup_user --/*/
   public signup(user: User):Observable<User>{
       return this.http.post<User>(this._API_SIGNUP, user);
@@ -41,7 +42,7 @@ export class UserServiceService {
     //   return this.http.post<Account>(this._API_ADD_ACCOUNT + "/" + user_id , account);
     // }
 
-    public add_account(user_id: number, account: Account): Observable<Account> {
+    public add_account(user_id : number, account: Account): Observable<Account> {
       return this.http.post<Account>(`${this._API_ADD_ACCOUNT}/${user_id}`, account);
     }
 
@@ -51,9 +52,19 @@ export class UserServiceService {
     return this.http.get<Array<AccountDTO>>(`${this._API_GET_ALL_ACCOUNTS}/${id}`);
   }
 
+  /*/-- _get_account --/*/
+  public get_account(id : number):Observable<AccountDTO>{
+    return this.http.get<AccountDTO>(`${this._API_GET_ACCOUNT}/${id}`);
+  }
+
     /*/-- _get_first_card --/*/
-    public getfirstCarte(id: number): Observable<Carte> {
+    public getfirstCarte(id : number): Observable<Carte> {
       return this.http.get<Carte>(`${this._API__GET_CARDE}/${id}`);
+    }
+
+    /*/-- _get_all_cards --/*/
+    public get_all_Cartes(id : number): Observable<Array<Carte>> {
+      return this.http.get<Array<Carte>>(`${this._API__GET_ALL_CARDE}/${id}`);
     }
 
 
