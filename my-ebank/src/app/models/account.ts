@@ -1,3 +1,4 @@
+import { Time } from "@angular/common";
 import { CarteStatus } from "../enums/carte-status";
 import { CarteType } from "../enums/carte-type";
 import { CompteType } from "../enums/compte-type";
@@ -27,14 +28,14 @@ export interface Beneficier {
 
 export interface Transaction {
   id: number;
-  transactionDate: string;
-  transactionTimer: string;
+  transactionDate: Date;
+  transactionTimer: Time;
   montant: number;
   type_transaction: TransactionType;
   description_transaction: string;
   bank_transaction: string;
-  compteId: number;
-  beneficierId: number;
+  compte: Account;
+  beneficier: Beneficier;
 }
 
 export interface Carte {

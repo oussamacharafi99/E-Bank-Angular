@@ -9,8 +9,9 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./transaction.component.css']
 })
 export class TransactionComponent implements OnInit {
-  transactionsList !: Array<Transaction>
-  constructor(private service : UserServiceService , private route : ActivatedRoute) { }
+  transactionsList!: Array<Transaction>;
+
+  constructor(private service: UserServiceService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
@@ -18,19 +19,14 @@ export class TransactionComponent implements OnInit {
       console.log("-------- > > "+accountId);
       
       if (accountId) {
-        this.onGet(+accountId);
+        this.getAllTransaction(+accountId);
       }
     });
   }
 
-  onGet(id : number){
-    this.service.get_all_Cartes(id).subscribe({
-      next: (data: Array<ransaction>) => {
-        this.carte = data;
-      },
-      error: (err) => {
-        console.error('Error fetching card details', err);
-      }
+  getAllTransaction(id: number) {
+    this.service.get_all_tarnsaction(id).subscribe(data => {
+      this.transactionsList = data;
     });
   }
 

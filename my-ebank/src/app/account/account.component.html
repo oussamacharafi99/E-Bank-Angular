@@ -33,6 +33,6 @@
         <p>Account Type: <span>{{ account.type }}</span> </p>
         <p>Expiration: <span>{{account.date_creation}}</span> </p>
         <p>Solde: <span>{{account.solde}}</span> </p>
-        <p>Statu: <span [ngClass]="account.status ? 'active' : 'desactive'">{{ account.status ? 'Active' : 'Desactive' }}</span></p>
+        <p>Status: <span [ngClass]="account.status ? 'active' : 'desactive'">{{ account.status ? 'Active' : 'Desactive' }}</span></p>
     </div>
   </div>

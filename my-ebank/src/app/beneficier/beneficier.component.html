@@ -1,0 +1,17 @@
+<div class="bnf">
+    <div class="header">
+        <h1>BENEFICIER</h1>
+        <button>Add Beneficier</button>
+    </div>
+    <div class="beneficier" >
+        <div class="bnf-info" *ngFor="let beneficier of BeneficierList">
+            <div class="iconB">
+                <img src="../../assets/icons/avatar.png" alt="">
+            </div>
+            <div class="info">
+                <h1>{{beneficier.username}}</h1>
+                <p><span>{{beneficier.account_number}}</span><em>{{beneficier.bank}}</em></p>
+            </div>
+        </div>
+    </div>    
+</div>

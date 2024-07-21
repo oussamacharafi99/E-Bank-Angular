@@ -42,3 +42,42 @@
     border-radius: 20px;
     background: var(--color-secondary);
 }
+.transaction{
+    width: 98%;
+    padding: 10px;
+    background: var(--color-secondary);
+    border-radius: 20px;
+}
+.beneficier{
+    width: 98%;
+    padding: 10px;
+    background: var(--color-secondary);
+    border-radius: 20px;
+    margin: 5px 0 ;
+}
+.transaction-header{
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    padding: 10px;
+}
+.transaction-header > h1 {
+    font-size: 16px;
+    font-weight: 900;
+    color: var(--color-light);
+    display: flex;
+    align-items: center;
+}
+.transaction-header > button{
+    background: var(--background-primary);
+    border: none;
+    border-radius: 15px;
+    padding: 5px 10px;
+    color: var(--color-light);
+    font-size: 12px;
+    font-weight: 700;
+    transition: .3s;
+}
+.transaction-header > button:hover{
+    background:black;
+}
