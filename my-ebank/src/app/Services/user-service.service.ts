@@ -3,7 +3,7 @@ import { HttpClient} from '@angular/common/http'
 import { Observable } from 'rxjs';
 import { User } from '../models/user';
 import { JwtDto } from '../models/jwt-dto';
-import { Account, Carte } from '../models/account';
+import { Account, Carte, Transaction } from '../models/account';
 import { AccountDTO } from '../models/account-dto';
 
 @Injectable({
@@ -20,6 +20,7 @@ export class UserServiceService {
   private _API__GET_CARDE : string = "http://localhost:8000/carte/get";
   private _API__GET_ALL_CARDE : string = "http://localhost:8000/carte/get_all";
   private _API_GET_ACCOUNT : string = "http://localhost:8000/get_compte";
+  private _API_GET_ALL_TRANSACTION : string = "http://localhost:8000/Transaction/get";
   /*/-- _signup_user --/*/
   public signup(user: User):Observable<User>{
       return this.http.post<User>(this._API_SIGNUP, user);
@@ -67,5 +68,9 @@ export class UserServiceService {
       return this.http.get<Array<Carte>>(`${this._API__GET_ALL_CARDE}/${id}`);
     }
 
+     /*/-- _get_all_transacion --/*/
+     public get_all_tarnsaction(id : number): Observable<Array<Transaction>> {
+      return this.http.get<Array<Transaction>>(`${this._API_GET_ALL_TRANSACTION}/${id}`);
+    }
 
 }
