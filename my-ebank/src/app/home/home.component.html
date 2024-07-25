@@ -1,20 +1,37 @@
 <div class="main">
-    <div class="header">
-      <div class="heade">
-          <img src="../../assets/images/green minimalist online wallet logo.png" alt="">
-      </div>
+  <div class="header">
+    <div class="heade">
+        <img src="../../assets/images/green minimalist online wallet logo.png" alt="">
     </div>
-    <div class="hero-main ">  
-      <app-login></app-login>
+    
+   <div class="btns animate__animated animate__backInLeft animate__delay-1s">
+    <button id="login" (click)="onOpenOrClose(true)">login</button>
+    <button id="signup" (click)="onOpenOrCloseSignup(true)">Signup</button>
+   </div>
+
+  </div>
+  <div class="hero-main">  
+    <div class="item item1 animate__animated animate__backInLeft animate__delay-1s">
+      <img src="../../assets/images/o (1).png" alt="">
     </div>
-       <!-- <app-add-user></app-add-user> -->
+    <div class="item item2">
+      <img src="../../assets/images/o (2).png" alt="">
+    </div>
+    <div class="item item3">
+      <img src="../../assets/images/o (3).png" alt="">
+    </div>
+  </div>
+
 </div>
 
-<!-- 
-<div class="left">
-<div class="flower">
-<div class="btns"> -->
-  <!-- <button class="login" mat-raised-button (click)="openDialog('3000ms', '1500ms')">Login</button> -->
-<!-- </div>
-</div>
-</div> -->
+<section class="popup" [ngStyle]="{'display': check ? 'flex' : 'none'}">
+  <button (click)="onOpenOrClose(false)">Close</button>
+    <app-login></app-login>
+</section>
+
+<!-- singup -->
+
+<section class="popup-signup" [ngStyle]="{'display': check1 ? 'flex' : 'none'}">
+  <button (click)="onOpenOrCloseSignup(false)">Close</button>
+           <app-add-user></app-add-user>
+</section>

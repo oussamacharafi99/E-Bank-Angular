@@ -11,16 +11,17 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class BeneficierComponent implements OnInit {
   BeneficierList !: Beneficier[];
+  accountId : any
 
   constructor(private service : UserServiceService , private fb : FormBuilder , private route : ActivatedRoute) { }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
-      const accountId = params.get('id');
-      console.log("-------- > > "+accountId);
+       this.accountId = params.get('id');
+      console.log("-------- > > "+this.accountId);
       
-      if (accountId) {
-        this.getAllBeneficier(+accountId);
+      if (this.accountId) {
+        this.getAllBeneficier(+this.accountId);
       }
     });
   }
@@ -29,6 +30,13 @@ export class BeneficierComponent implements OnInit {
       this.service.get_all_beneficiers(id).subscribe(data => {
         this.BeneficierList = data;
       })
+  }
+  deleteBeneficier(id: number): void {
+    this.service.delete_Beneficier(id).subscribe(() => {
+      this.getAllBeneficier(this.accountId);
+    }, error => {
+      console.error('Error deleting beneficier:', error);
+    });
   }
 
 }

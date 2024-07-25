@@ -8,11 +8,15 @@
             <div class="transaction">
               <div class="transaction-header">
                 <h1>TRANSACTION</h1>
-                <button>add transaction</button>
+                <button (click)="onOpenOrClose(true)">add transaction</button>
               </div>
               <app-transaction></app-transaction>
             </div>
             <div class="beneficier">
+              <div class="transaction-header">
+                <h1>BENEFICIER</h1>
+                <button (click)="onOpenOrCloseBeneficier(true)">Add Beneficier</button>
+              </div>
               <app-beneficier></app-beneficier>
             </div>
           </div>
@@ -29,3 +33,11 @@
    </div>
 </section>
 
+<section class="popup" [ngStyle]="{'display': check ? 'flex' : 'none'}">
+  <button (click)="onOpenOrClose(false)">Close</button>
+  <app-add-transaction></app-add-transaction>
+</section>
+
+<section class="popup" [ngStyle]="{'display': check1 ? 'flex' : 'none'}">
+  <button (click)="onOpenOrCloseBeneficier(false)">Close</button>
+</section>

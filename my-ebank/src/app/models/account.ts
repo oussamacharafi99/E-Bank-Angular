@@ -23,13 +23,13 @@ export interface Beneficier {
   username: string;
   bank: string;
   account_number: string;
-  compteId: number;
+  compte: Account;
 }
 
 export interface Transaction {
   id: number;
-  transactionDate: Date;
-  transactionTimer: Time;
+  transactionDate: string;
+  transactionTimer: string;
   montant: number;
   type_transaction: TransactionType;
   description_transaction: string;

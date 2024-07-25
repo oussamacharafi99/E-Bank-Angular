@@ -19,6 +19,9 @@ import { ChoiceAccountComponent } from './choice-account/choice-account.componen
 import { TransactionComponent } from './transaction/transaction.component';
 import { BeneficierComponent } from './beneficier/beneficier.component';
 import { InterceptorAuth } from './Services/_auth_interceptor.service';
+import { AddTransactionComponent } from './add-transaction/add-transaction.component';
+import { UpdateBeneficierComponent } from './update-beneficier/update-beneficier.component';
+import { LogoutComponent } from './logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +37,10 @@ import { InterceptorAuth } from './Services/_auth_interceptor.service';
     NavComponent,
     ChoiceAccountComponent,
     TransactionComponent,
-    BeneficierComponent
+    BeneficierComponent,
+    AddTransactionComponent,
+    UpdateBeneficierComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,

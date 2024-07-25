@@ -1,8 +1,5 @@
 <div class="bnf">
-    <div class="header">
-        <h1>BENEFICIER</h1>
-        <button>Add Beneficier</button>
-    </div>
+    
     <div class="beneficier" >
         <div class="bnf-info" *ngFor="let beneficier of BeneficierList">
             <div class="iconB">
@@ -12,6 +9,11 @@
                 <h1>{{beneficier.username}}</h1>
                 <p><span>{{beneficier.account_number}}</span><em>{{beneficier.bank}}</em></p>
             </div>
+            <div class="btns">
+                <a [routerLink]="['/beneficier', beneficier?.id]" *ngIf="beneficier">Update</a>
+                <button id="delete" (click)="deleteBeneficier(beneficier.id)">Delete</button>
+            </div>
         </div>
-    </div>    
+    </div> 
+       
 </div>

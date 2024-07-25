@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,6 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
+  check: boolean = false;
+
+  onOpenOrClose(check: boolean) {
+    this.check = check;
+  }
+
+  check1: boolean = false;
+
+  onOpenOrCloseBeneficier(check1: boolean) {
+    this.check1 = check1;
+  }
   constructor() { }
 
   ngOnInit(): void {
